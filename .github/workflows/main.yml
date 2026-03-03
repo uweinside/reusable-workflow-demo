@@ -1,0 +1,13 @@
+name: CI
+
+on:
+  workflow_dispatch: 
+  push:
+    branches:
+      - main
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      node-version: "20"
